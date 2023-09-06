@@ -2,7 +2,7 @@ package counter;
 
 import counter.CircularCounter.Direction;
 
-public class SecondCounter extends CircularCounter {
+public class SecondCounter extends SettableCounter {
 	public SecondCounter() {
 		this(Direction.INCREASING, null); // vad anropas här?
 	}

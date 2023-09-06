@@ -1,6 +1,6 @@
 package counter;
 
-public class MinuteCounter extends CircularCounter {
+public class MinuteCounter extends SettableCounter {
 	public MinuteCounter() {
 		this(Direction.INCREASING, null); // vad anropas här?
 	}
