@@ -1,6 +1,6 @@
 package counter;
 
-import alarmklocka.CircularCounter.Direction;
+import counter.CircularCounter.Direction;
 
 public class SecondCounter extends CircularCounter {
 	public SecondCounter() {
