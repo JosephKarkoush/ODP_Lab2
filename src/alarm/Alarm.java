@@ -22,7 +22,7 @@ public class Alarm implements AlarmType
   @Override
   public boolean isActive()
     {
-    //...
+    return true;
     }
 
   @Override
@@ -41,5 +41,6 @@ public class Alarm implements AlarmType
   public String toString()
     {
     //... delegera till times toString()-metod
+	  return "";
     }
   }
