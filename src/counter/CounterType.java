@@ -15,7 +15,7 @@ public interface CounterType {
 	
 	String toString();
 
-	void setCurrentCount(int newCurrentCount);
+	//void setCurrentCount(int newCurrentCount);;;
 	
 	
 
