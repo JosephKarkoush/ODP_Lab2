@@ -26,6 +26,8 @@ public abstract class CircularCounter implements CounterType {
 			currentCount = MAX_NR_OF_COUNTS - 1;
 	}
 	
+	
+	
 	public void setCurrentCount(int newCurrentCount) {
 		currentCount = newCurrentCount;
 	}
