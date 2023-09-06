@@ -25,7 +25,11 @@ public abstract class CircularCounter implements CounterType {
 		if (this.direction == Direction.DECREASING && this.MAX_NR_OF_COUNTS > 0)
 			currentCount = MAX_NR_OF_COUNTS - 1;
 	}
-
+	@Override
+	public void setCurrentCount(int newCurrentCount) {
+		currentCount = newCurrentCount;
+	}
+	
 	@Override
 	public int getCount() {
 		return currentCount;
