@@ -1,7 +1,6 @@
 package counter;
 
-public class SettableCounter extends CircularCounter implements SettableCounterType  {
-
+public class SettableCounter extends CircularCounter implements SettableCounterType {
 
 	public SettableCounter(int maxNrOfCounts, Direction direction, CounterType nextCounter) {
 		super(maxNrOfCounts, direction, nextCounter);
@@ -9,9 +8,9 @@ public class SettableCounter extends CircularCounter implements SettableCounterT
 
 	@Override
 	public void setCount(int value) {
-		
+
 		super.setCurrentCount(value);
-		
+
 	}
 
 }
