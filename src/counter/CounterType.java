@@ -12,10 +12,9 @@ public interface CounterType {
 	
 	void resume();
 	
-	
 	String toString();
 
-	//void setCurrentCount(int newCurrentCount);;;
+	void setCurrentCount(int newCurrentCount);
 	
 	
 
