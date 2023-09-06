@@ -10,6 +10,8 @@ public class SettableCounter extends CircularCounter implements SettableCounterT
 	@Override
 	public void setCount(int value) {
 		
+		super.setCurrentCount(value);
+		
 	}
 
 }
