@@ -3,13 +3,23 @@ package clock;
 import java.util.Collection;
 
 import alarm.AlarmType;
+import counter.CircularCounter;
+import counter.CounterType;
+import counter.HourCounter;
+import counter.MinuteCounter;
+import counter.SecondCounter;
 import time.TimeType;
 
 public class WeekAlarmClock implements AlarmClockType {
 
+	CounterType hourC = new HourCounter();
+	CounterType minuteC = new MinuteCounter(hourC);
+	CounterType secondC = new SecondCounter(minuteC);
+	
+	
 	@Override
 	public void tickTack() {
-		// TODO Auto-generated method stub
+		secondC.count();
 		
 	}
 
