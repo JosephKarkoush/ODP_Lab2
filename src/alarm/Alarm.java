@@ -16,31 +16,32 @@ public class Alarm implements AlarmType
   @Override
   public void setActive(boolean active)
     {
-    //...
+    this.active = active;
     }
 
   @Override
   public boolean isActive()
     {
-    return true;
+    return this.active;
     }
 
   @Override
   public TimeType getTime()
     {
-    //...
+    return time;
     }
 
   @Override
   public void doAlarm()
     {
-    if(active)
-      //.... skriv ut notis om att alarm är triggat 
+    if(active) {
+    	System.out.println("Ring Ring Ring");
+    }//.... skriv ut notis om att alarm är triggat 
     }
   
   public String toString()
     {
     //... delegera till times toString()-metod
-	  return "";
+	  return time.toString();
     }
   }
