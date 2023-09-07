@@ -25,7 +25,7 @@ public class WeekAlarmClock implements AlarmClockType {
 
 	@Override
 	public void setTime(TimeType time) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
