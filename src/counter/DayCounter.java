@@ -16,7 +16,7 @@ public class DayCounter extends SettableCounter {
 	}
 
 	public DayCounter(Direction direction, CounterType next) {
-		super(6, direction, next); // vad anropas här?//
+		super(7, direction, next); // vad anropas här?//
 
 	}
 
