@@ -15,9 +15,11 @@ class MainTest {
 	void test() {
 		AlarmClockType cc = new WeekAlarmClock();
 		
-		TimeType tt = new Time(1,2,2,2);
+		//TimeType tt = new Time(1,2,2,2);
 		
-		
+		cc.tickTack();
+		cc.tickTack();
+		cc.tickTack();
 		
 		
 		
@@ -25,7 +27,7 @@ class MainTest {
 		
 		System.out.println(cc.getTime());
 		
-		cc.setTime(tt);
+
 		
 		
 		

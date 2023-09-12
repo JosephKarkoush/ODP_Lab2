@@ -2,7 +2,7 @@ package clock;
 
 import java.util.Collection;
 
-
+import alarm.AlarmManager;
 import alarm.AlarmType;
 import counter.CircularCounter;
 import counter.CounterType;
@@ -18,13 +18,13 @@ public class WeekAlarmClock implements AlarmClockType {
 	CounterType hourC = new HourCounter(dayC);
 	CounterType minuteC = new MinuteCounter(hourC);
 	CounterType secondC = new SecondCounter(minuteC);
-
+	AlarmManager alarmManage = new AlarmManager();
 	
 	@Override
 	public void tickTack() {
-		if(getAlarms() != null) {
-			secondC.count();
-		}
+		secondC.count();
+		
+		alarmManage.checkForAlarm(getTime());
 		
 	}
 
@@ -60,7 +60,7 @@ public class WeekAlarmClock implements AlarmClockType {
 
 	@Override
 	public TimeType getTime() {
-		return getTime();
+		return new Time(dayC.getCount(), hourC.getCount(), minuteC.getCount(), secondC.getCount());
 	}
 	
 
