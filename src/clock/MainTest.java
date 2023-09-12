@@ -13,19 +13,29 @@ class MainTest {
 
 	@Test
 	void test() {
+		
+		
 		AlarmClockType cc = new WeekAlarmClock();
 		
-		//TimeType tt = new Time(1,2,2,2);
-		
 		cc.tickTack();
 		cc.tickTack();
-		cc.tickTack();
-		
-		
-		
-		
-		
+		assertEquals(cc.getTime().toString(), "Mon 00:00:02");
 		System.out.println(cc.getTime());
+		
+		TimeType tt = new Time("Mon 00:00:04");
+		cc.setTime(tt);
+		
+		assertEquals(tt.getSecond(), 4);
+		System.out.println(tt.getSecond());
+		
+	
+
+		
+		
+		
+		
+		
+		
 		
 
 		
