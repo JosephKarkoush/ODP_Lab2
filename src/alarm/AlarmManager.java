@@ -31,7 +31,8 @@ public class AlarmManager
   public void checkForAlarm(TimeType time)
     {
     AlarmType alarm = map.get(time.toString());
-    if(alarm != null && alarm.isActive())
+    if(alarm != null && alarm.isActive()) {
       alarm.doAlarm();
+    }
     }
   }
