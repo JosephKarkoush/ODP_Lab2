@@ -74,6 +74,10 @@ public class WeekAlarmClock implements AlarmClockType {
 	public TimeType getTime() {
 		return new Time(dayC.getCount(), hourC.getCount(), minuteC.getCount(), secondC.getCount());
 	}
+	@Override
+	public String toString() {
+		return getTime().toString();
+	}
 	
 
 }

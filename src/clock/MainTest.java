@@ -60,6 +60,7 @@ class MainTest {
 		assertEquals(ct.getAlarms().toString(), "[Mon 00:00:04, Mon 00:00:02]");
 		ct.removeAllAlarms();
 		assertEquals(ct.getAlarms().toString(), "[]");	
+		System.out.println(ct.toString());
 		
 		
 	}
