@@ -11,7 +11,7 @@ public class TextBoxPanel extends JPanel {
 	
 	public TextBoxPanel(){
 		setLayout( new BorderLayout());
-		
+		textField.setSize(30, 10);
 		
 		add(BorderLayout.CENTER, textField);
 		
