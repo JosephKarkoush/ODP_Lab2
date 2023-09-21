@@ -7,10 +7,11 @@ import javax.swing.JPanel;
 public class MainPanel extends JPanel {
 	
 	private JPanel clockPanel = new ClockPanel();
-	private JPanel buttonPanel = new ButtonPanel();
+
 	private JPanel consolkPanel = new ConsolPanel();
 	private JPanel textBoxPanel = new TextBoxPanel();
 	
+	private JPanel buttonPanel = new ButtonPanel(textBoxPanel);
 	
 	public MainPanel() {
 		setLayout(new GridLayout(2,2));
