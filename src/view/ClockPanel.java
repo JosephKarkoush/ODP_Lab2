@@ -12,8 +12,10 @@ public class ClockPanel extends JPanel {
 	private JPanel analogclock = new AnalogClock();
 	
 	public ClockPanel() {
+		setLayout(new BorderLayout());
+		add(BorderLayout.CENTER, analogclock);
+		add(BorderLayout.CENTER, digitalclock);
 		tabs.addTab("Analog Clock", analogclock);
-		
 		tabs.addTab("Digital Clock", digitalclock );
 		
 		add(tabs);

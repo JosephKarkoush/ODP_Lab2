@@ -1,20 +1,29 @@
 package view;
 
-import java.awt.BorderLayout;
-
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
+import javax.swing.*;
+import java.awt.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class DigitalClock extends JPanel {
-	
-	JTextArea digtalClockShower = new JTextArea("Här är digitala tiden som ska visas");
-	
-	public DigitalClock() {
-		setLayout(new BorderLayout());
-		
-		add(BorderLayout.CENTER, digtalClockShower);
-		digtalClockShower.setSize(30, 30);
-		
-	}
 
+    private JLabel digitalClockLabel;
+
+    public DigitalClock() {
+        setLayout(new BorderLayout());
+        digitalClockLabel = new JLabel("00:00:00", SwingConstants.CENTER);
+        digitalClockLabel.setFont(new Font("Arial", Font.PLAIN, 24));
+        add(digitalClockLabel, BorderLayout.CENTER);
+
+        Timer timer = new Timer(1000, e -> {
+            updateDigitalClock();
+        });
+        timer.start();
+    }
+
+    private void updateDigitalClock() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+        String currentTime = dateFormat.format(new Date());
+        digitalClockLabel.setText(currentTime);
+    }
 }
