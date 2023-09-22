@@ -1,15 +1,20 @@
 package view;
 
 import javax.swing.*;
+
+import controller.Controller;
+
 import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DigitalClock extends JPanel {
+	private Controller controller;
 
     private JLabel digitalClockLabel;
 
-    public DigitalClock() {
+    public DigitalClock(Controller controller) {
+    	this.controller = controller;
         setLayout(new BorderLayout());
         digitalClockLabel = new JLabel("00:00:00", SwingConstants.CENTER);
         digitalClockLabel.setFont(new Font("Arial", Font.PLAIN, 24));

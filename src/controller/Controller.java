@@ -4,25 +4,33 @@ import counter.*;
 import clock.*;
 import time.*;
 import view.TextBoxPanel;
+
+import javax.swing.Timer;
+
 import alarm.*;
 import view.*;
 
 public class Controller {
 
-	private WeekAlarmClock weekAlarmclock;
+	protected WeekAlarmClock weekAlarmclock;
 
 	public Controller(WeekAlarmClock weekAlarmclock) {
 		this.weekAlarmclock = weekAlarmclock;
-		
-		while(true) {
+
+	}
+
+	public void tickTackWeekAlarm() {
+		Timer timer = new Timer(1000, e -> {
 			weekAlarmclock.tickTack();
 			
-		}
+			
+		});
+		timer.start();
 
 	}
 
 	public void settimeWitController() {
-		
+
 	}
 
 	public void addAlarmWithcontroller(String alarmToAdd) {

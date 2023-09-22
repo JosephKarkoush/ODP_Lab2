@@ -5,11 +5,11 @@ import controller.*;
 
 public class MainFrame extends JFrame {
 	
-	private Controller controller;
-	private JPanel mainPanel = new MainPanel();
+	private Controller mainController;
+	private JPanel mainPanel = new MainPanel(mainController);
 
-	public MainFrame(Controller controller) {
-		this.controller = controller;
+	public MainFrame(Controller mainController) {
+		this.mainController = mainController;
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

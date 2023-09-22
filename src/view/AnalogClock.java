@@ -1,27 +1,27 @@
 package view;
 
+import controller.*;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class AnalogClock extends JPanel {
+import controller.Controller;
 
+public class AnalogClock extends JPanel {
+	private Controller controller;
     private double secundAngle;
     private double minuteAngle;
     private double hourAngle;
 
-    public AnalogClock() {
+    public AnalogClock(Controller controller) {
+    	this.controller = controller;
         setBackground(Color.red);
         secundAngle = Math.PI / 2;
         minuteAngle = Math.PI / 2;
         hourAngle = Math.PI / 2;
 
-        Timer timer = new Timer(1000, e -> {
-            updateAngles();
-            repaint();
-        });
-        timer.start();
     }
     
     
@@ -29,13 +29,14 @@ public class AnalogClock extends JPanel {
     
 
     public void updateAngles() {
-        
+       
     	
         secundAngle -= Math.PI / 30;
         minuteAngle -= ((Math.PI / 30)/60);
         hourAngle -= (((Math.PI / 30)/60)/60);
+        repaint();
     }
-
+    
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
