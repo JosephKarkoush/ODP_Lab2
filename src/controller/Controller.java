@@ -28,6 +28,10 @@ public class Controller {
 		timer.start();
 
 	}
+	
+	public String getTimeController() {
+		return weekAlarmclock.getTime().toString();
+	}
 
 	public void settimeWitController() {
 
