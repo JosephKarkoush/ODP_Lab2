@@ -7,13 +7,15 @@ import javax.swing.Timer;
 
 public class AnalogClock extends JPanel {
 
-    private double hourAngle;
+    private double secundAngle;
     private double minuteAngle;
+    private double hourAngle;
 
     public AnalogClock() {
         setBackground(Color.red);
-        hourAngle = Math.PI / 3;
-        minuteAngle = Math.PI / 3;
+        secundAngle = Math.PI / 2;
+        minuteAngle = Math.PI / 2;
+        hourAngle = Math.PI / 2;
 
         Timer timer = new Timer(1000, e -> {
             updateAngles();
@@ -21,12 +23,15 @@ public class AnalogClock extends JPanel {
         });
         timer.start();
     }
+    
+    
 
     private void updateAngles() {
         
     	
-        hourAngle -= Math.PI / 180;
-        minuteAngle -= Math.PI / 30;
+        secundAngle -= Math.PI / 30;
+        minuteAngle -= ((Math.PI / 30)/60);
+        hourAngle -= (((Math.PI / 30)/60)/60);
     }
 
     @Override
@@ -49,18 +54,25 @@ public class AnalogClock extends JPanel {
         double radius = height / 2;
 
         
-        double hourHandLength = radius * 0.5;
-        double xHourEnd = xCenter + hourHandLength * Math.cos(hourAngle);
-        double yHourEnd = yCenter - hourHandLength * Math.sin(hourAngle);
-        g.setColor(Color.blue);
-        g.drawLine(xCenter, yCenter, (int) xHourEnd, (int) yHourEnd);
+        double secondHandLength = radius * 0.5;
+        double xsecondEnd = xCenter + secondHandLength * Math.cos(secundAngle);
+        double ysecondEnd = yCenter - secondHandLength * Math.sin(secundAngle);
+        g.setColor(Color.white);
+        g.drawLine(xCenter, yCenter, (int) xsecondEnd, (int) ysecondEnd);
 
         
         double minuteHandLength = radius * 0.7;
         double xMinuteEnd = xCenter + minuteHandLength * Math.cos(minuteAngle);
         double yMinuteEnd = yCenter - minuteHandLength * Math.sin(minuteAngle);
-        g.setColor(Color.green);
+        g.setColor(Color.black);
         g.drawLine(xCenter, yCenter, (int) xMinuteEnd, (int) yMinuteEnd);
+        
+        
+        double hourHandLength = radius * 0.7;
+        double xHourEnd = xCenter + hourHandLength * Math.cos(hourAngle);
+        double yHourEnd = yCenter - hourHandLength * Math.sin(hourAngle);
+        g.setColor(Color.black);
+        g.drawLine(xCenter, yCenter, (int) xHourEnd, (int) yHourEnd);
 
     }
 }

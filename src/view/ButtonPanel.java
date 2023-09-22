@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 import controller.*;
 
@@ -15,6 +16,7 @@ public class ButtonPanel extends JPanel {
 	private String text;
 	
 	public ButtonPanel(JPanel textBoxPanel) {
+		setBackground(Color.blue);
 		setLayout(new FlowLayout());
 		this.text = textBoxPanel.toString();
 		add(setButton);
