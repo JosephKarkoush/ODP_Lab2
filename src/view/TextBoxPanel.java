@@ -15,7 +15,6 @@ public class TextBoxPanel extends JPanel {
 		
 		add(BorderLayout.CENTER, textField);
 		
-		
 	}
 	
 	public String getString() {

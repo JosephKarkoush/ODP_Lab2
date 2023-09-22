@@ -26,9 +26,9 @@ public class AnalogClock extends JPanel {
 
     private void updateAngles() {
         // Update the angles for hours, minutes, and seconds
-        hourAngle += Math.PI / 180; // 1-degree increment per second
-        minuteAngle += Math.PI / 30; // 6-degree increment per second
-        secondAngle += Math.PI / 30; // 6-degree increment per second
+        hourAngle -= Math.PI / 180;
+        minuteAngle -= Math.PI / 30;
+        secondAngle -= Math.PI / 30;
     }
 
     @Override
