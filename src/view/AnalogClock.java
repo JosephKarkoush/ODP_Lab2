@@ -9,13 +9,11 @@ public class AnalogClock extends JPanel {
 
     private double hourAngle;
     private double minuteAngle;
-    private double secondAngle;
 
     public AnalogClock() {
         setBackground(Color.red);
         hourAngle = Math.PI / 3;
         minuteAngle = Math.PI / 3;
-        secondAngle = Math.PI / 3;
 
         Timer timer = new Timer(1000, e -> {
             updateAngles();
@@ -25,10 +23,10 @@ public class AnalogClock extends JPanel {
     }
 
     private void updateAngles() {
-        // Update the angles for hours, minutes, and seconds
+        
+    	
         hourAngle -= Math.PI / 180;
         minuteAngle -= Math.PI / 30;
-        secondAngle -= Math.PI / 30;
     }
 
     @Override
@@ -43,21 +41,21 @@ public class AnalogClock extends JPanel {
         int xCenter = width / 2;
         int yCenter = height / 2;
 
-        // Draw clock face
+        
         g.drawLine(0, yCenter, width, yCenter);
         g.drawLine(xCenter, 0, xCenter, height);
         g.drawOval(0, 0, width, height);
 
         double radius = height / 2;
 
-        // Draw the hour hand
+        
         double hourHandLength = radius * 0.5;
         double xHourEnd = xCenter + hourHandLength * Math.cos(hourAngle);
         double yHourEnd = yCenter - hourHandLength * Math.sin(hourAngle);
         g.setColor(Color.blue);
         g.drawLine(xCenter, yCenter, (int) xHourEnd, (int) yHourEnd);
 
-        // Draw the minute hand
+        
         double minuteHandLength = radius * 0.7;
         double xMinuteEnd = xCenter + minuteHandLength * Math.cos(minuteAngle);
         double yMinuteEnd = yCenter - minuteHandLength * Math.sin(minuteAngle);
