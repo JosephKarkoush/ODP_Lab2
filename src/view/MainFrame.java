@@ -1,12 +1,16 @@
 package view;
 
 import javax.swing.*;
+import controller.*;
 
 public class MainFrame extends JFrame {
-
+	
+	private Controller controller;
 	private JPanel mainPanel = new MainPanel();
 
-	public MainFrame() {
+	public MainFrame(Controller controller) {
+		this.controller = controller;
+		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		add(mainPanel);

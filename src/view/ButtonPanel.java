@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import controller.*;
 import java.awt.FlowLayout;
 import controller.*;
 

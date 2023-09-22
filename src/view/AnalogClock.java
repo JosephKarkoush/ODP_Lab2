@@ -25,8 +25,10 @@ public class AnalogClock extends JPanel {
     }
     
     
+    
+    
 
-    private void updateAngles() {
+    public void updateAngles() {
         
     	
         secundAngle -= Math.PI / 30;
