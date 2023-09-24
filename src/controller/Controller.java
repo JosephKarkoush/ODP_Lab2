@@ -13,14 +13,18 @@ import view.*;
 public class Controller {
 
 	private WeekAlarmClock weekAlarmclock;
+	private MainFrame mainframe;
+	
 
-	public Controller(WeekAlarmClock weekAlarmclock) {
+	public Controller(WeekAlarmClock weekAlarmclock, MainFrame mainframe) {
 		this.weekAlarmclock = weekAlarmclock;
+		this.mainframe = mainframe;
 
 	}
 
 	public void tickTackWeekAlarm() {
 		weekAlarmclock.tickTack();
+		
 
 	}
 	
@@ -29,6 +33,7 @@ public class Controller {
 	}
 
 	public void settimeWitController() {
+		
 
 	}
 

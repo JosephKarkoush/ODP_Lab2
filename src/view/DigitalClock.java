@@ -29,4 +29,5 @@ public class DigitalClock extends JPanel {
     	String currentTime = dateFormat.format(new Date());
        digitalClockLabel.setText(currentTime);
     }
+
 }

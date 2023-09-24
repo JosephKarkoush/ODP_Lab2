@@ -7,11 +7,10 @@ import javax.swing.JPanel;
 import controller.Controller;
 
 public class MainPanel extends JPanel {
+	
 	private JPanel clockPanel = new ClockPanel();
-
 	private JPanel consolkPanel = new ConsolPanel();
 	private JPanel textBoxPanel = new TextBoxPanel();
-	
 	private JPanel buttonPanel = new ButtonPanel(textBoxPanel);
 	
 	public MainPanel() {
