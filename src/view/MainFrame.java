@@ -4,12 +4,10 @@ import javax.swing.*;
 import controller.*;
 
 public class MainFrame extends JFrame {
-	
-	private Controller mainController;
-	private JPanel mainPanel = new MainPanel(mainController);
 
-	public MainFrame(Controller mainController) {
-		this.mainController = mainController;
+	private JPanel mainPanel = new MainPanel();
+
+	public MainFrame() {
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

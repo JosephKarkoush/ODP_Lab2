@@ -10,13 +10,12 @@ import javax.swing.Timer;
 import controller.Controller;
 
 public class AnalogClock extends JPanel {
-	private Controller controller;
+	
     private double secundAngle;
     private double minuteAngle;
     private double hourAngle;
 
-    public AnalogClock(Controller controller) {
-    	this.controller = controller;
+    public AnalogClock() {
         setBackground(Color.red);
         secundAngle = Math.PI / 2;
         minuteAngle = Math.PI / 2;
