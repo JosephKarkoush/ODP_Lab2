@@ -9,26 +9,24 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DigitalClock extends JPanel {
-	private Controller controller;
 
     private JLabel digitalClockLabel;
 
-    public DigitalClock(Controller controller) {
-    	this.controller = controller;
+    public DigitalClock() {
         setLayout(new BorderLayout());
         digitalClockLabel = new JLabel("00:00:00", SwingConstants.CENTER);
         digitalClockLabel.setFont(new Font("Arial", Font.PLAIN, 24));
         add(digitalClockLabel, BorderLayout.CENTER);
 
         Timer timer = new Timer(1000, e -> {
-            updateDigitalClock();
+        	updateDigitalClock();
         });
         timer.start();
     }
 
     private void updateDigitalClock() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-        String currentTime = dateFormat.format(new Date());
-        digitalClockLabel.setText(currentTime);
+    	SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+    	String currentTime = dateFormat.format(new Date());
+       digitalClockLabel.setText(currentTime);
     }
 }

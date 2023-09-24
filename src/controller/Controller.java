@@ -12,7 +12,7 @@ import view.*;
 
 public class Controller {
 
-	protected WeekAlarmClock weekAlarmclock;
+	private WeekAlarmClock weekAlarmclock;
 
 	public Controller(WeekAlarmClock weekAlarmclock) {
 		this.weekAlarmclock = weekAlarmclock;
@@ -20,17 +20,12 @@ public class Controller {
 	}
 
 	public void tickTackWeekAlarm() {
-		Timer timer = new Timer(1000, e -> {
-			weekAlarmclock.tickTack();
-			
-			
-		});
-		timer.start();
+		weekAlarmclock.tickTack();
 
 	}
 	
 	public String getTimeController() {
-		return weekAlarmclock.getTime().toString();
+		return weekAlarmclock.toString();
 	}
 
 	public void settimeWitController() {
