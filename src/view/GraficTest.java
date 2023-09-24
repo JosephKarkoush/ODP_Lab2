@@ -11,7 +11,9 @@ public class GraficTest {
 	public static void main(String[] args) {
 		
 		WeekAlarmClock weekAlarmClock = new WeekAlarmClock();
-		Controller controller = new Controller(weekAlarmClock);
+		
+		AnalogClock analogclock = new AnalogClock();
+		Controller controller = new Controller(weekAlarmClock, analogclock);
 		SwingUtilities.invokeLater(() -> new MainFrame(controller));
 		
 		

@@ -13,8 +13,7 @@ public class DigitalClock extends JPanel {
 
     private JLabel digitalClockLabel;
 
-    public DigitalClock(Controller controller) {
-    	this.controller = controller;
+    public DigitalClock() {
         setLayout(new BorderLayout());
         digitalClockLabel = new JLabel("00:00:00", SwingConstants.CENTER);
         digitalClockLabel.setFont(new Font("Arial", Font.PLAIN, 24));
@@ -24,6 +23,10 @@ public class DigitalClock extends JPanel {
             updateDigitalClock();
         });
         timer.start();
+    }
+    
+    public void SetControllerForDigital(Controller controller) {
+    	this.controller = controller;
     }
 
     private void updateDigitalClock() {
