@@ -12,19 +12,16 @@ import view.*;
 
 public class Controller {
 
-	private WeekAlarmClock weekAlarmclock;
-	private AnalogClock analogclock;
+	protected WeekAlarmClock weekAlarmclock;
 
-	public Controller(WeekAlarmClock weekAlarmclock, AnalogClock analogclock) {
+	public Controller(WeekAlarmClock weekAlarmclock) {
 		this.weekAlarmclock = weekAlarmclock;
-		this.analogclock = analogclock;
 
 	}
 
 	public void tickTackWeekAlarm() {
 		Timer timer = new Timer(1000, e -> {
 			weekAlarmclock.tickTack();
-			analogclock.updateAngles();
 			
 			
 		});
