@@ -4,7 +4,7 @@ import javax.swing.*;
 import controller.*;
 
 public class MainFrame extends JFrame {
-
+	
 	private JPanel mainPanel = new MainPanel();
 
 	public MainFrame() {

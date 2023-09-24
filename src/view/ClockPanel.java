@@ -8,6 +8,7 @@ import javax.swing.JTabbedPane;
 import controller.Controller;
 
 public class ClockPanel extends JPanel {
+	
 	private JTabbedPane tabs = new JTabbedPane();
 	private JPanel digitalclock = new DigitalClock();
 	private JPanel analogclock = new AnalogClock();
