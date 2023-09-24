@@ -20,7 +20,7 @@ public class AnalogClock extends JPanel {
         secundAngle = Math.PI / 2;
         minuteAngle = Math.PI / 2;
         hourAngle = Math.PI / 2;
-
+  
     }
     
     public void updateAngles() {
