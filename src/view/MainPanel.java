@@ -7,19 +7,24 @@ import javax.swing.JPanel;
 import controller.Controller;
 
 public class MainPanel extends JPanel {
-	
-	private JPanel clockPanel = new ClockPanel();
-	private JPanel consolkPanel = new ConsolPanel();
-	private JPanel textBoxPanel = new TextBoxPanel();
-	private JPanel buttonPanel = new ButtonPanel(textBoxPanel);
-	
-	public MainPanel() {
-		setLayout(new GridLayout(2,2));
+
+
+
+
+	public MainPanel(AnalogClock analogClock, DigitalClock digitalClock) {
+		setLayout(new GridLayout(2, 2));
+
+		
+		 JPanel clockPanel = new ClockPanel(analogClock, digitalClock);
+		 JPanel consolkPanel = new ConsolPanel();
+		 JPanel textBoxPanel = new TextBoxPanel();
+		 JPanel buttonPanel = new ButtonPanel(textBoxPanel);
+		
 		
 		this.add(clockPanel);
 		this.add(buttonPanel);
 		this.add(consolkPanel);
 		this.add(textBoxPanel);
-	
+
 	}
 }

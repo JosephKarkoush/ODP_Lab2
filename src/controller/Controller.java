@@ -12,12 +12,11 @@ import view.*;
 
 public class Controller {
 
-	private WeekAlarmClock weekAlarmclock;
+	private WeekAlarmClock weekAlarmclock = new WeekAlarmClock();
 	private AnalogClock analogClock;
 	private DigitalClock digitalClock;
 
-	public Controller(WeekAlarmClock weekAlarmclock, AnalogClock analogClock,DigitalClock digitalClock) {
-		this.weekAlarmclock = weekAlarmclock;
+	public Controller(AnalogClock analogClock,DigitalClock digitalClock) {
 		this.analogClock = analogClock;
 		this.digitalClock = digitalClock;
 
