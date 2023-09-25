@@ -27,12 +27,13 @@ public class AnalogClock extends JPanel {
         secundAngle -= Math.PI / 30;
         minuteAngle -= ((Math.PI / 30)/60);
         hourAngle -= (((Math.PI / 30)/60)/60);
-        repaint();
+        System.out.println("Vikeln ändras");
     }
     
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        System.out.println("repaint is here");
 
         g.setColor(Color.white);
 

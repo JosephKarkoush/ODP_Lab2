@@ -15,5 +15,6 @@ public class MainFrame extends JFrame {
 		setSize(1000, 1000);
 		setVisible(true);
 	}
+	
 
 }

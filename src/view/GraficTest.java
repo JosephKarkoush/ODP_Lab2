@@ -9,11 +9,14 @@ import time.*;
 public class GraficTest {
 
 	public static void main(String[] args) {
-		WeekAlarmClock wc = new WeekAlarmClock();
-		MainFrame mf = new MainFrame();
-		Controller c = new Controller(wc, mf);
+		WeekAlarmClock weekAlarmClock = new WeekAlarmClock();
+		AnalogClock analogClock = new AnalogClock();
+		DigitalClock digitalClock = new DigitalClock();
+		Controller controller = new Controller(weekAlarmClock, analogClock, digitalClock);
+		controller.tickTackWeekAlarm();
 		
-//		SwingUtilities.invokeLater(() -> new MainFrame());
+		
+		SwingUtilities.invokeLater(() -> new MainFrame());
 		
 		
 
