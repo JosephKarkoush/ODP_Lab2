@@ -10,6 +10,7 @@ import javax.swing.*;
 public class ButtonPanel extends JPanel {
 
 	
+	private JButton setDay = new JButton("set day");
 	private JButton setHour = new JButton("set Hour");
 	private JButton setMinute = new JButton("set minute");
 	private JButton setSecond = new JButton("set second");
@@ -20,7 +21,7 @@ public class ButtonPanel extends JPanel {
 	private String text;
 	private TextBoxPanel textBoxPanel;
 
-	public ButtonPanel(JButton setDay) {
+	public ButtonPanel() {
 		setBackground(Color.blue);
 		setLayout(new FlowLayout());
 //		this.text = textBoxPanel.toString();
@@ -41,8 +42,6 @@ public class ButtonPanel extends JPanel {
 	}
 
 	public void setDayWithButton() {
-		
-
 	}
 	
 	public void setHourWithButton() {

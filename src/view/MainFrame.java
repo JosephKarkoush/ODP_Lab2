@@ -7,13 +7,13 @@ import controller.*;
 
 public class MainFrame extends JFrame {
 
-	
-	
-	JButton setDay = new JButton("set day");
+	ConsolPanel consolkPanel = new ConsolPanel();
+	TextBoxPanel textBoxPanel = new TextBoxPanel();
+	ButtonPanel buttonPanel = new ButtonPanel();
 	AnalogClock analogClock = new AnalogClock();
 	DigitalClock digitalClock = new DigitalClock();
-	Controller controller = new Controller(analogClock, digitalClock, setDay);
-	private JPanel mainPanel = new MainPanel(analogClock, digitalClock, setDay);
+	Controller controller = new Controller(analogClock, digitalClock, buttonPanel,textBoxPanel , consolkPanel);
+	private JPanel mainPanel = new MainPanel(analogClock, digitalClock, buttonPanel, textBoxPanel, consolkPanel);
 
 	public MainFrame() {
 		

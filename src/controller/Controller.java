@@ -3,11 +3,11 @@ package controller;
 import counter.*;
 import clock.*;
 import time.*;
-import view.TextBoxPanel;
 
 import java.awt.Color;
 
 import javax.swing.JButton;
+import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import alarm.*;
@@ -18,15 +18,20 @@ public class Controller {
 	private WeekAlarmClock weekAlarmclock = new WeekAlarmClock();
 	private AnalogClock analogClock;
 	private DigitalClock digitalClock;
-	private JButton setDay;
+	private ButtonPanel buttonPanel;
+	private TextBoxPanel textBoxPanel;
+	private ConsolPanel consolkPanel;
 
-	public Controller(AnalogClock analogClock,DigitalClock digitalClock, JButton setDay) {
+	public Controller(AnalogClock analogClock,DigitalClock digitalClock, ButtonPanel buttonPanel, TextBoxPanel textBoxPanel, ConsolPanel consolkPanel) {
 		this.analogClock = analogClock;
 		this.digitalClock = digitalClock;
-		this.setDay = setDay;
-		setDay.setBackground(Color.black);;
+		this.buttonPanel = buttonPanel;
+		this.textBoxPanel = textBoxPanel;
+		this.consolkPanel = consolkPanel;
 		
-
+		
+		
+		
 	}
 
 	public void tickTackWeekAlarm() {
