@@ -9,11 +9,11 @@ public class MainFrame extends JFrame {
 
 	
 	
-	
+	JButton setDay = new JButton("set day");
 	AnalogClock analogClock = new AnalogClock();
 	DigitalClock digitalClock = new DigitalClock();
-	Controller controller = new Controller(analogClock, digitalClock);
-	private JPanel mainPanel = new MainPanel(analogClock, digitalClock);
+	Controller controller = new Controller(analogClock, digitalClock, setDay);
+	private JPanel mainPanel = new MainPanel(analogClock, digitalClock, setDay);
 
 	public MainFrame() {
 		

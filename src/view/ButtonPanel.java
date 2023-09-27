@@ -8,52 +8,69 @@ import controller.*;
 import javax.swing.*;
 
 public class ButtonPanel extends JPanel {
+
 	
-	private JButton setButton = new JButton("set time");
+	private JButton setHour = new JButton("set Hour");
+	private JButton setMinute = new JButton("set minute");
+	private JButton setSecond = new JButton("set second");
 	private JButton addAlarmButton = new JButton("add alarm");
 	private JButton removeAlarmButton = new JButton("remove alarm");
 	private JButton seeAlarmsButton = new JButton("see alarms");
 	private JButton checkAlarmButton = new JButton("check alarm");
 	private String text;
-	
-	public ButtonPanel(JPanel textBoxPanel) {
+	private TextBoxPanel textBoxPanel;
+
+	public ButtonPanel(JButton setDay) {
 		setBackground(Color.blue);
 		setLayout(new FlowLayout());
-		this.text = textBoxPanel.toString();
-		add(setButton);
+//		this.text = textBoxPanel.toString();
+		add(setDay);
+		add(setHour);
+		add(setMinute);
+		add(setSecond);
 		add(addAlarmButton);
 		add(removeAlarmButton);
 		add(seeAlarmsButton);
 		add(checkAlarmButton);
+
+		setDay.addActionListener(e -> setDayWithButton());
+		addAlarmButton.addActionListener(e -> setDayWithButton());
+		removeAlarmButton.addActionListener(e -> setHourWithButton());
+		seeAlarmsButton.addActionListener(e -> setMinuteWithButton());
+		checkAlarmButton.addActionListener(e -> setSecondWithButton());
+	}
+
+	public void setDayWithButton() {
 		
-		setButton.addActionListener(e-> settimeWithButton());
-		addAlarmButton.addActionListener(e-> settimeWithButton());
-		removeAlarmButton.addActionListener(e-> settimeWithButton());
-		seeAlarmsButton.addActionListener(e-> settimeWithButton());
-		checkAlarmButton.addActionListener(e-> settimeWithButton());
+
 	}
 	
-	public void settimeWithButton() {
-		
-		
+	public void setHourWithButton() {
+
 	}
 	
+	public void setMinuteWithButton() {
+
+	}
+	
+	public void setSecondWithButton() {
+
+	}
+
 	public void addAlarmWithButton() {
-		
+
 	}
-	
+
 	public void removeAlarmWithButton() {
-		
+
 	}
-	
-	public void checkAlarmWithButton(){
-		
+
+	public void checkAlarmWithButton() {
+
 	}
-	
+
 	public String getText() {
 		return text;
 	}
-	
-	
 
 }

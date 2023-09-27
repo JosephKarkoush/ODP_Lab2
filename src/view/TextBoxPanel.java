@@ -17,6 +17,10 @@ public class TextBoxPanel extends JPanel {
 		
 	}
 	
+	public void setString(String text) {
+		textField.setText(text);
+	}
+	
 	public String getString() {
 		
 		return textField.getText();
