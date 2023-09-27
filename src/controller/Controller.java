@@ -21,6 +21,8 @@ public class Controller {
 	private ButtonPanel buttonPanel;
 	private TextBoxPanel textBoxPanel;
 	private ConsolPanel consolkPanel;
+	private TimeType time;
+	
 
 	public void SetController(AnalogClock analogClock, DigitalClock digitalClock, ButtonPanel buttonPanel,
 			TextBoxPanel textBoxPanel, ConsolPanel consolkPanel) {
@@ -36,35 +38,94 @@ public class Controller {
 
 		Timer timer = new Timer(1000, e -> {
 			weekAlarmclock.tickTack();
-			analogClock.updateAngles();
+			analogClock.updateHourAngle();
+			analogClock.updateMinuteAngle();
+			analogClock.updateSecondAngle();
 			analogClock.repaint();
 			digitalClock.updateDigitalClock(weekAlarmclock.getTime().toString());
 		});
 		timer.start();
+		
 	}
 
 	public String getTimeController() {
 		return weekAlarmclock.getTime().toString();
 	}
 
-	public void setMinuteWitController(String nyMinute) {
+	public void setDay() {
+		String text = textBoxPanel.getString();
+		int dayNumber = Integer.parseInt(text);
+		weekAlarmclock.setDay(dayNumber);
 
 	}
 
-	public void setSecondWitController(String nySecond) {
+	public void setHour() {
+		analogClock.resetHourAngles();
+		String text = textBoxPanel.getString();
+		int hourNumber = Integer.parseInt(text);
+		weekAlarmclock.setHour(hourNumber);
+		updateHourClock();
 
 	}
 
-	public void setHourWitController(String nyHour) {
+	public void setMinute() {
+		analogClock.resetMinuteAngles();
+		String text = textBoxPanel.getString();
+		int minuteNumber = Integer.parseInt(text);
+		weekAlarmclock.setMinute(minuteNumber);
+		updateMinuteClock();
+	}
+
+	public void setSecond() {
+		analogClock.resetSecondAngles();
+		String text = textBoxPanel.getString();
+		int secondNumber = Integer.parseInt(text);
+		weekAlarmclock.setSecond(secondNumber);
+		updateSecondClock();
 
 	}
 
-	public void setDayWitController(String nyDay) {
-
+	public void updateHourClock() {
+		int newHour = weekAlarmclock.getHour();
+		for (int i = 0; i <= newHour; i++) {
+			analogClock.updateHourAngle();
+		}
+		analogClock.repaint();
 	}
+
+	public void updateMinuteClock() {
+		int newMinute = weekAlarmclock.getMinute();
+		for (int i = 0; i <= newMinute; i++) {
+			analogClock.updateMinuteAngle();
+		}
+		analogClock.repaint();
+	}
+
+	public void updateSecondClock() {
+		int newSecond = weekAlarmclock.getSecond();
+		for (int i = 0; i <= newSecond; i++) {
+			analogClock.updateSecondAngle();
+		}
+		analogClock.repaint();
+	}
+
+	public int getHourController() {
+		return weekAlarmclock.getHour();
+	}
+
+	public int getMinuteController() {
+		return weekAlarmclock.getMinute();
+	}
+
+	public int getSecondController() {
+		return weekAlarmclock.getSecond();
+	}
+
+	
 
 	public void addAlarmWithcontroller(String alarmToAdd) {
-
+		time = weekAlarmclock.getTime();
+		
 	}
 
 	public void removeAlarmWithcontroller(String alarmToRemove) {

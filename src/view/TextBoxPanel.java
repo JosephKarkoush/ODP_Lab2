@@ -10,7 +10,7 @@ import controller.Controller;
 public class TextBoxPanel extends JPanel {
 	
 	private Controller controller;
-	private JTextField textField = new JTextField("mata in tid");
+	private JTextField textField = new JTextField();
 	
 	public TextBoxPanel(Controller controller){
 		this.controller = controller;
