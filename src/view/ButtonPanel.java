@@ -18,10 +18,11 @@ public class ButtonPanel extends JPanel {
 	private JButton removeAlarmButton = new JButton("remove alarm");
 	private JButton seeAlarmsButton = new JButton("see alarms");
 	private JButton checkAlarmButton = new JButton("check alarm");
-	private String text;
-	private TextBoxPanel textBoxPanel;
+	private Controller controller;
+	String text;
 
-	public ButtonPanel() {
+	public ButtonPanel(Controller controller) {
+		this.controller = controller;
 		setBackground(Color.blue);
 		setLayout(new FlowLayout());
 //		this.text = textBoxPanel.toString();
@@ -42,6 +43,7 @@ public class ButtonPanel extends JPanel {
 	}
 
 	public void setDayWithButton() {
+		
 	}
 	
 	public void setHourWithButton() {

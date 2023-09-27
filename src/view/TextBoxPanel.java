@@ -5,11 +5,15 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import controller.Controller;
+
 public class TextBoxPanel extends JPanel {
 	
+	private Controller controller;
 	private JTextField textField = new JTextField("mata in tid");
 	
-	public TextBoxPanel(){
+	public TextBoxPanel(Controller controller){
+		this.controller = controller;
 		setLayout( new BorderLayout());
 		textField.setSize(30, 10);
 		

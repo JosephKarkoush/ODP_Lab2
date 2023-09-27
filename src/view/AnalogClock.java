@@ -14,8 +14,10 @@ public class AnalogClock extends JPanel {
     private double secundAngle;
     private double minuteAngle;
     private double hourAngle;
+    private Controller controller;
 
-    public AnalogClock() {
+    public AnalogClock(Controller controller) {
+    	this.controller = controller;
         setBackground(Color.red);
         secundAngle = Math.PI / 2;
         minuteAngle = Math.PI / 2;

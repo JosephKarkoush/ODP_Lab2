@@ -22,16 +22,14 @@ public class Controller {
 	private TextBoxPanel textBoxPanel;
 	private ConsolPanel consolkPanel;
 
-	public Controller(AnalogClock analogClock,DigitalClock digitalClock, ButtonPanel buttonPanel, TextBoxPanel textBoxPanel, ConsolPanel consolkPanel) {
+	public void SetController(AnalogClock analogClock, DigitalClock digitalClock, ButtonPanel buttonPanel,
+			TextBoxPanel textBoxPanel, ConsolPanel consolkPanel) {
 		this.analogClock = analogClock;
 		this.digitalClock = digitalClock;
 		this.buttonPanel = buttonPanel;
 		this.textBoxPanel = textBoxPanel;
 		this.consolkPanel = consolkPanel;
-		
-		
-		
-		
+
 	}
 
 	public void tickTackWeekAlarm() {
