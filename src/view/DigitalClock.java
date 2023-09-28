@@ -24,7 +24,6 @@ public class DigitalClock extends JPanel {
 	public void updateDigitalClock(String newCurrentTime) {
 		this.newCurrentTime = newCurrentTime;
 		digitalClockLabel.setText(this.newCurrentTime);
-		System.out.println("update digital");
 	}
 
 }

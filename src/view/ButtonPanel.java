@@ -18,6 +18,8 @@ public class ButtonPanel extends JPanel {
 	private JButton removeAlarmButton = new JButton("remove alarm");
 	private JButton seeAlarmsButton = new JButton("see alarms");
 	private JButton checkAlarmButton = new JButton("check alarm");
+	private JButton removeAllAlarms = new JButton("remove all alarms");
+	private JButton setActiveInActive = new JButton("Set ON/OFF");
 	private Controller controller;
 	String text;
 
@@ -32,17 +34,21 @@ public class ButtonPanel extends JPanel {
 		add(setSecondButton);
 		add(addAlarmButton);
 		add(removeAlarmButton);
+		add(removeAllAlarms);
 		add(seeAlarmsButton);
 		add(checkAlarmButton);
+		add(setActiveInActive);
 
 		setDayButton.addActionListener(e -> controller.setDay());
 		setHourButton.addActionListener(e -> controller.setHour());
 		setMinuteButton.addActionListener(e -> controller.setMinute());
 		setSecondButton.addActionListener(e -> controller.setSecond());
-//		addAlarmButton.addActionListener(e -> controller.get());
-//		removeAlarmButton.addActionListener(e -> setHourWithButton());
-//		seeAlarmsButton.addActionListener(e -> setMinuteWithButton());
-//		checkAlarmButton.addActionListener(e -> setSecondWithButton());
+		addAlarmButton.addActionListener(e -> controller.addLarm());
+		removeAlarmButton.addActionListener(e -> controller.removeLarm());
+		seeAlarmsButton.addActionListener(e -> controller.checkAlarms());
+		removeAllAlarms.addActionListener(e -> controller.removeAllLarms());
+		checkAlarmButton.addActionListener(e -> controller.checkLarm());
+		setActiveInActive.addActionListener(e -> controller.setActivInActive());
 	}
 
 	public String getText() {

@@ -19,7 +19,12 @@ public class ConsolPanel extends JPanel {
 		this.controller = controller;
 		setLayout(new BorderLayout());
 		add(BorderLayout.CENTER, consolResultnew);
-		consolResultnew.setFont(new Font("TimesRoman", Font.BOLD, 35));
+		consolResultnew.setFont(new Font("TimesRoman", Font.BOLD, 20));
+	}
+	
+	public void setConsoleText(String newConsoleText) {
+		consolResultnew.setText(newConsoleText);
+		
 	}
 
 }
