@@ -14,7 +14,7 @@ import alarm.*;
 import view.*;
 
 public class Controller {
-
+	  
 	private WeekAlarmClock weekAlarmclock = new WeekAlarmClock();
 	private AnalogClock analogClock;
 	private DigitalClock digitalClock;
