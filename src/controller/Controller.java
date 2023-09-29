@@ -7,7 +7,6 @@ import time.*;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Observer;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -33,11 +32,6 @@ public class Controller {
 		this.textBoxPanel = textBoxPanel;
 		this.consolkPanel = consolkPanel;
 
-	}
-	
-	public void registerObserverToFirstDjur(Observer observer) {
-		AlarmManager alarmManager = person.getHusdjur().get(0); //VARNING listan kan vara tom
-		firstDjur.addObserver(observer);
 	}
 
 	public void addLarm() {
@@ -69,17 +63,6 @@ public class Controller {
 			}
 		}
 
-//		String textLarm = textBoxPanel.getString();
-//		Time checkTid = new Time(textLarm);
-//		Alarm removeAlarm = new Alarm(checkTid);
-//		
-//		boolean activeStatus = removeAlarm.isActive();
-//		if(activeStatus == true) {
-//			consolkPanel.setConsoleText("Active");
-//		} else {
-//			consolkPanel.setConsoleText("Not Active");
-//		}
-
 	}
 
 	public void removeAllLarms() {
@@ -92,15 +75,15 @@ public class Controller {
 		for (AlarmType larm : weekAlarmclock.getAlarms()) {
 
 			if (larm.toString().equals(textLarm)) {
-				if(larm.isActive()) {
+				if (larm.isActive()) {
 					larm.setActive(false);
-				}else {
+				} else {
 					larm.setActive(true);
 				}
 			}
 		}
 
-	}   
+	}
 
 	public void tickTackWeekAlarm() {
 
@@ -127,7 +110,8 @@ public class Controller {
 	public void setDay() {
 		String text = textBoxPanel.getString();
 		int dayNumber = Integer.parseInt(text);
-		TimeType nyTime = new Time(dayNumber,weekAlarmclock.getTime().getHour(),weekAlarmclock.getTime().getMinute(),weekAlarmclock.getTime().getSecond());
+		TimeType nyTime = new Time(dayNumber, weekAlarmclock.getTime().getHour(), weekAlarmclock.getTime().getMinute(),
+				weekAlarmclock.getTime().getSecond());
 		weekAlarmclock.setTime(nyTime);
 
 	}
@@ -136,7 +120,8 @@ public class Controller {
 		analogClock.resetHourAngles();
 		String text = textBoxPanel.getString();
 		int hourNumber = Integer.parseInt(text);
-		TimeType nyTime = new Time(weekAlarmclock.getTime().getDay(),hourNumber,weekAlarmclock.getTime().getMinute(),weekAlarmclock.getTime().getSecond());
+		TimeType nyTime = new Time(weekAlarmclock.getTime().getDay(), hourNumber, weekAlarmclock.getTime().getMinute(),
+				weekAlarmclock.getTime().getSecond());
 		weekAlarmclock.setTime(nyTime);
 		updateHourClock();
 
@@ -146,8 +131,9 @@ public class Controller {
 		analogClock.resetMinuteAngles();
 		String text = textBoxPanel.getString();
 		int minuteNumber = Integer.parseInt(text);
-		
-		TimeType nyTime = new Time(weekAlarmclock.getTime().getDay(),weekAlarmclock.getTime().getHour(),minuteNumber,weekAlarmclock.getTime().getSecond());
+
+		TimeType nyTime = new Time(weekAlarmclock.getTime().getDay(), weekAlarmclock.getTime().getHour(), minuteNumber,
+				weekAlarmclock.getTime().getSecond());
 		weekAlarmclock.setTime(nyTime);
 		updateMinuteClock();
 	}
@@ -156,8 +142,9 @@ public class Controller {
 		analogClock.resetSecondAngles();
 		String text = textBoxPanel.getString();
 		int secondNumber = Integer.parseInt(text);
-		
-		TimeType nyTime = new Time(weekAlarmclock.getTime().getDay(),weekAlarmclock.getTime().getHour(),weekAlarmclock.getTime().getMinute(),secondNumber);
+
+		TimeType nyTime = new Time(weekAlarmclock.getTime().getDay(), weekAlarmclock.getTime().getHour(),
+				weekAlarmclock.getTime().getMinute(), secondNumber);
 		weekAlarmclock.setTime(nyTime);
 		updateSecondClock();
 
@@ -191,7 +178,7 @@ public class Controller {
 		return weekAlarmclock.getTime().getHour();
 	}
 
-	public int getMinuteController() {		
+	public int getMinuteController() {
 		return weekAlarmclock.getTime().getMinute();
 	}
 

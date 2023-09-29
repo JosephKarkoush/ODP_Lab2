@@ -38,18 +38,16 @@ public class AnalogClock extends JPanel {
 	}
 
 	public void updateHourAngle() {
-		hourAngle = -controller.getHourController() * (2 * Math.PI / 12)+ Math.PI/2;
+		hourAngle = -controller.getHourController() * (2 * Math.PI / 12) + Math.PI / 2;
 	}
 
 	public void updateMinuteAngle() {
-		minuteAngle = -controller.getMinuteController() * (2 * Math.PI / 60)+ Math.PI/2;
+		minuteAngle = -controller.getMinuteController() * (2 * Math.PI / 60) + Math.PI / 2;
 	}
 
 	public void updateSecondAngle() {
-		secundAngle = -controller.getSecondController() * (2 * Math.PI / 60)+ Math.PI/2;
+		secundAngle = -controller.getSecondController() * (2 * Math.PI / 60) + Math.PI / 2;
 	}
-
-
 
 	@Override
 	public void paintComponent(Graphics g) {

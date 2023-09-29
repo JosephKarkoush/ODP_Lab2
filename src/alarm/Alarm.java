@@ -1,9 +1,12 @@
 package alarm;
 
 
+
+import java.util.Observable;
+
 import time.TimeType;
 
-public class Alarm implements AlarmType  {
+public class Alarm extends Observable implements AlarmType  {
 	private boolean active;
 	private TimeType time;
 
@@ -31,6 +34,8 @@ public class Alarm implements AlarmType  {
 	public void doAlarm() {
 		if (active) {
 			System.out.println("Ring Ring Ring");
+			setChanged();
+			notifyObservers();
 		} // .... skriv ut notis om att alarm är triggat
 	}
 

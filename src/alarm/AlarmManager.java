@@ -6,7 +6,7 @@ import java.util.Observable;
 
 import time.TimeType;
 
-public class AlarmManager extends Observable {
+public class AlarmManager {
 	private HashMap<String, AlarmType> map = new HashMap<String, AlarmType>();
 
 	public void addAlarm(AlarmType alarm) {
@@ -29,8 +29,7 @@ public class AlarmManager extends Observable {
 		AlarmType alarm = map.get(time.toString());
 		if (alarm != null && alarm.isActive()) {
 			alarm.doAlarm();
-			setChanged();
-			notifyObservers();
+
 		}
 	}
 }

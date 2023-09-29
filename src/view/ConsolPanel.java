@@ -23,16 +23,16 @@ public class ConsolPanel extends JPanel implements Observer {
 		add(BorderLayout.CENTER, consolResultnew);
 		consolResultnew.setFont(new Font("TimesRoman", Font.BOLD, 20));
 	}
-	
+
 	public void setConsoleText(String newConsoleText) {
 		consolResultnew.setText(newConsoleText);
-		
+
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
 		setConsoleText("ring ring ring");
-		
+
 	}
 
 }
