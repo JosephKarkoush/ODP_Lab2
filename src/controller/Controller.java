@@ -121,7 +121,8 @@ public class Controller {
 	public void setDay() {
 		String text = textBoxPanel.getString();
 		int dayNumber = Integer.parseInt(text);
-		weekAlarmclock.setDay(dayNumber);
+		TimeType nyTime = new Time(dayNumber,weekAlarmclock.getTime().getHour(),weekAlarmclock.getTime().getMinute(),weekAlarmclock.getTime().getSecond());
+		weekAlarmclock.setTime(nyTime);
 
 	}
 
@@ -129,7 +130,8 @@ public class Controller {
 		analogClock.resetHourAngles();
 		String text = textBoxPanel.getString();
 		int hourNumber = Integer.parseInt(text);
-		weekAlarmclock.setHour(hourNumber);
+		TimeType nyTime = new Time(weekAlarmclock.getTime().getDay(),hourNumber,weekAlarmclock.getTime().getMinute(),weekAlarmclock.getTime().getSecond());
+		weekAlarmclock.setTime(nyTime);
 		updateHourClock();
 
 	}
@@ -138,7 +140,9 @@ public class Controller {
 		analogClock.resetMinuteAngles();
 		String text = textBoxPanel.getString();
 		int minuteNumber = Integer.parseInt(text);
-		weekAlarmclock.setMinute(minuteNumber);
+		
+		TimeType nyTime = new Time(weekAlarmclock.getTime().getDay(),weekAlarmclock.getTime().getHour(),minuteNumber,weekAlarmclock.getTime().getSecond());
+		weekAlarmclock.setTime(nyTime);
 		updateMinuteClock();
 	}
 
@@ -146,13 +150,15 @@ public class Controller {
 		analogClock.resetSecondAngles();
 		String text = textBoxPanel.getString();
 		int secondNumber = Integer.parseInt(text);
-		weekAlarmclock.setSecond(secondNumber);
+		
+		TimeType nyTime = new Time(weekAlarmclock.getTime().getDay(),weekAlarmclock.getTime().getHour(),weekAlarmclock.getTime().getMinute(),secondNumber);
+		weekAlarmclock.setTime(nyTime);
 		updateSecondClock();
 
 	}
 
 	public void updateHourClock() {
-		int newHour = weekAlarmclock.getHour();
+		int newHour = weekAlarmclock.getTime().getHour();
 		for (int i = 0; i <= newHour; i++) {
 			analogClock.updateHourAngle();
 		}
@@ -160,7 +166,7 @@ public class Controller {
 	}
 
 	public void updateMinuteClock() {
-		int newMinute = weekAlarmclock.getMinute();
+		int newMinute = weekAlarmclock.getTime().getMinute();
 		for (int i = 0; i <= newMinute; i++) {
 			analogClock.updateMinuteAngle();
 		}
@@ -168,7 +174,7 @@ public class Controller {
 	}
 
 	public void updateSecondClock() {
-		int newSecond = weekAlarmclock.getSecond();
+		int newSecond = weekAlarmclock.getTime().getSecond();
 		for (int i = 0; i <= newSecond; i++) {
 			analogClock.updateSecondAngle();
 		}
@@ -176,14 +182,14 @@ public class Controller {
 	}
 
 	public int getHourController() {
-		return weekAlarmclock.getHour();
+		return weekAlarmclock.getTime().getHour();
 	}
 
-	public int getMinuteController() {
-		return weekAlarmclock.getMinute();
+	public int getMinuteController() {		
+		return weekAlarmclock.getTime().getMinute();
 	}
 
 	public int getSecondController() {
-		return weekAlarmclock.getSecond();
+		return weekAlarmclock.getTime().getSecond();
 	}
 }

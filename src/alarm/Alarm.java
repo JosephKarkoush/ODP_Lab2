@@ -1,8 +1,10 @@
 package alarm;
 
+
+
 import time.TimeType;
 
-public class Alarm implements AlarmType {
+public class Alarm implements AlarmType  {
 	private boolean active;
 	private TimeType time;
 
