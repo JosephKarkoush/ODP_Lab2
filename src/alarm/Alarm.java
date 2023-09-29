@@ -1,7 +1,6 @@
 package alarm;
 
 
-
 import time.TimeType;
 
 public class Alarm implements AlarmType  {

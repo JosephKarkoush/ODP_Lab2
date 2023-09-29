@@ -3,6 +3,8 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -11,7 +13,7 @@ import javax.swing.SwingConstants;
 
 import controller.Controller;
 
-public class ConsolPanel extends JPanel {
+public class ConsolPanel extends JPanel implements Observer {
 	private Controller controller;
 	private JLabel consolResultnew = new JLabel("Consol Resultat", SwingConstants.CENTER);
 
@@ -24,6 +26,12 @@ public class ConsolPanel extends JPanel {
 	
 	public void setConsoleText(String newConsoleText) {
 		consolResultnew.setText(newConsoleText);
+		
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		setConsoleText("ring ring ring");
 		
 	}
 

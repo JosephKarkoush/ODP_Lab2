@@ -1,5 +1,8 @@
 package view;
 
+
+import java.util.Observer;
+
 import javax.swing.*;
 
 import clock.WeekAlarmClock;
@@ -25,5 +28,14 @@ public class MainFrame extends JFrame {
 		setVisible(true);
 	}
 	
+//	public void consoleControll() {
+//
+//	}
+//	@Override
+//	public void update(Observable o, Object arg) {
+//		
+//		
+//	}
+//	
 
 }

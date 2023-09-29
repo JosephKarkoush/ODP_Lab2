@@ -1,6 +1,7 @@
 package clock;
 
 import java.util.Collection;
+import java.util.Observable;
 
 import alarm.AlarmManager;
 import alarm.AlarmType;
@@ -29,6 +30,7 @@ public class WeekAlarmClock implements AlarmClockType {
 
 		alarmManage.checkForAlarm(getTime());
 
+
 	}
 
 	@Override
@@ -44,38 +46,6 @@ public class WeekAlarmClock implements AlarmClockType {
 		secondC.setCount(sec);
 
 	}
-
-//	public void setDay(int daynumb) {
-//		dayC.setCount(daynumb);
-//	}
-//
-//	public void setHour(int hournumb) {
-//		hourC.setCount(hournumb);
-//	}
-//
-//	public void setMinute(int minnumb) {
-//		minuteC.setCount(minnumb);
-//	}
-//
-//	public void setSecond(int secnumb) {
-//		secondC.setCount(secnumb);
-//	}
-//
-//	public int getDay() {
-//		return dayC.getCount();
-//	}
-//
-//	public int getHour() {
-//		return hourC.getCount();
-//	}
-//
-//	public int getMinute() {
-//		return minuteC.getCount();
-//	}
-//
-//	public int getSecond() {
-//		return secondC.getCount();
-//	}
 
 	@Override
 	public void addAlarm(AlarmType larm) {

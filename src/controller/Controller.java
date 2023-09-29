@@ -7,6 +7,7 @@ import time.*;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Observer;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -32,6 +33,11 @@ public class Controller {
 		this.textBoxPanel = textBoxPanel;
 		this.consolkPanel = consolkPanel;
 
+	}
+	
+	public void registerObserverToFirstDjur(Observer observer) {
+		AlarmManager alarmManager = person.getHusdjur().get(0); //VARNING listan kan vara tom
+		firstDjur.addObserver(observer);
 	}
 
 	public void addLarm() {
