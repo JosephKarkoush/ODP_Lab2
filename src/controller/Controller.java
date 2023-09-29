@@ -39,6 +39,7 @@ public class Controller {
 		Time nyTid = new Time(textLarm);
 		Alarm alarm = new Alarm(nyTid);
 		weekAlarmclock.addAlarm(alarm);
+		alarm.addObserver(consolkPanel);
 	}
 
 	public void removeLarm() {
