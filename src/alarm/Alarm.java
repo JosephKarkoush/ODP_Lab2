@@ -36,7 +36,7 @@ public class Alarm extends Observable implements AlarmType  {
 			System.out.println("Ring Ring Ring");
 			setChanged();
 			notifyObservers();
-		} // .... skriv ut notis om att alarm är triggat
+		} // .... skriv ut notis om att alarm är triggat   
 	}
 
 	public String toString() {
