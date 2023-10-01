@@ -5,7 +5,9 @@ import clock.*;
 import time.*;
 
 import java.awt.Color;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 
 import javax.swing.JButton;
@@ -84,6 +86,13 @@ public class Controller {
 			}
 		}
 
+	}
+	
+	public void setLocalTime() {
+		LocalTime localTime = LocalTime.now();
+		Calendar calendar = Calendar.getInstance();
+		TimeType localTimeObj = new Time(calendar.DAY_OF_WEEK-1,localTime.getHour(),localTime.getMinute(),localTime.getSecond());
+		weekAlarmclock.setTime(localTimeObj);
 	}
 
 	public void tickTackWeekAlarm() {

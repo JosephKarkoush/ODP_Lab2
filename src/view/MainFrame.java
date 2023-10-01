@@ -20,6 +20,7 @@ public class MainFrame extends JFrame {
 
 	public MainFrame() {
 		controller.SetController(analogClock, digitalClock, buttonPanel, textBoxPanel, consolkPanel);
+		controller.setLocalTime();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		controller.tickTackWeekAlarm();
 		add(mainPanel);
