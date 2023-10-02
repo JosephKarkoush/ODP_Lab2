@@ -91,7 +91,7 @@ public class Controller {
 	public void setLocalTime() {
 		LocalTime localTime = LocalTime.now();
 		Calendar calendar = Calendar.getInstance();
-		TimeType localTimeObj = new Time(calendar.DAY_OF_WEEK-1,localTime.getHour(),localTime.getMinute(),localTime.getSecond());
+		TimeType localTimeObj = new Time(calendar.DAY_OF_WEEK,localTime.getHour(),localTime.getMinute(),localTime.getSecond());
 		weekAlarmclock.setTime(localTimeObj);
 	}
 
