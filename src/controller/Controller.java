@@ -37,33 +37,48 @@ public class Controller {
 	}
 
 	public void addLarm() {
-		String textLarm = textBoxPanel.getString();
-		Time nyTid = new Time(textLarm);
-		Alarm alarm = new Alarm(nyTid);
-		weekAlarmclock.addAlarm(alarm);
-		alarm.addObserver(consolkPanel);
+
+		try {
+			String textLarm = textBoxPanel.getString();
+			Time nyTid = new Time(textLarm);
+			Alarm alarm = new Alarm(nyTid);
+			weekAlarmclock.addAlarm(alarm);
+			alarm.addObserver(consolkPanel);
+		} catch (Exception e) {
+			consolkPanel.msgbox("Fel tidformat! va vänlig och mata i på givna sättet(Dag Timmar:Minuter:Sekunder)");
+		}
+
 	}
 
 	public void removeLarm() {
-		String textLarm = textBoxPanel.getString();
-		Time removeTid = new Time(textLarm);
-		Alarm removeAlarm = new Alarm(removeTid);
-		weekAlarmclock.removeAlarm(removeAlarm);
+		try {
+			String textLarm = textBoxPanel.getString();
+			Time removeTid = new Time(textLarm);
+			Alarm removeAlarm = new Alarm(removeTid);
+			weekAlarmclock.removeAlarm(removeAlarm);
+		} catch (Exception e) {
+			consolkPanel.msgbox("Fel tidformat! va vänlig och mata i på givna sättet(Dag Timmar:Minuter:Sekunder)");
+		}
+
 	}
 
 	public void checkLarm() {
-		String textLarm = textBoxPanel.getString();
 
-		for (AlarmType larm : weekAlarmclock.getAlarms()) {
+		try {
+			String textLarm = textBoxPanel.getString();
+			for (AlarmType larm : weekAlarmclock.getAlarms()) {
 
-			if (larm.toString().equals(textLarm)) {
-				System.out.println("jämför");
-				if (!larm.isActive()) {
-					consolkPanel.setConsoleText("false");
-				} else {
-					consolkPanel.setConsoleText("true");
+				if (larm.toString().equals(textLarm)) {
+					System.out.println("jämför");
+					if (!larm.isActive()) {
+						consolkPanel.setConsoleText("false");
+					} else {
+						consolkPanel.setConsoleText("true");
+					}
 				}
 			}
+		} catch (Exception e) {
+			consolkPanel.msgbox("Fel tidformat! va vänlig och mata i på givna sättet(Dag Timmar:Minuter:Sekunder)");
 		}
 
 	}
@@ -73,25 +88,30 @@ public class Controller {
 	}
 
 	public void setActivInActive() {
-		String textLarm = textBoxPanel.getString();
+		try {
+			String textLarm = textBoxPanel.getString();
 
-		for (AlarmType larm : weekAlarmclock.getAlarms()) {
+			for (AlarmType larm : weekAlarmclock.getAlarms()) {
 
-			if (larm.toString().equals(textLarm)) {
-				if (larm.isActive()) {
-					larm.setActive(false);
-				} else {
-					larm.setActive(true);
+				if (larm.toString().equals(textLarm)) {
+					if (larm.isActive()) {
+						larm.setActive(false);
+					} else {
+						larm.setActive(true);
+					}
 				}
 			}
+		} catch (Exception e) {
+			consolkPanel.msgbox("Fel tidformat! va vänlig och mata i på givna sättet(Dag Timmar:Minuter:Sekunder)");
 		}
 
 	}
-	
+
 	public void setLocalTime() {
 		LocalTime localTime = LocalTime.now();
 		Calendar calendar = Calendar.getInstance();
-		TimeType localTimeObj = new Time(calendar.DAY_OF_WEEK,localTime.getHour(),localTime.getMinute(),localTime.getSecond());
+		TimeType localTimeObj = new Time(calendar.DAY_OF_WEEK, localTime.getHour(), localTime.getMinute(),
+				localTime.getSecond());
 		weekAlarmclock.setTime(localTimeObj);
 	}
 
@@ -118,45 +138,79 @@ public class Controller {
 	}
 
 	public void setDay() {
-		String text = textBoxPanel.getString();
-		int dayNumber = Integer.parseInt(text);
-		TimeType nyTime = new Time(dayNumber, weekAlarmclock.getTime().getHour(), weekAlarmclock.getTime().getMinute(),
-				weekAlarmclock.getTime().getSecond());
-		weekAlarmclock.setTime(nyTime);
+		try {
+			String text = textBoxPanel.getString();
+			int dayNumber = Integer.parseInt(text);
+			if (dayNumber <= 6) {
+
+				TimeType nyTime = new Time(dayNumber, weekAlarmclock.getTime().getHour(),
+						weekAlarmclock.getTime().getMinute(), weekAlarmclock.getTime().getSecond());
+				weekAlarmclock.setTime(nyTime);
+			} else {
+				consolkPanel.msgbox("Fel Sifferformat! va vänlig och mata in 0-6");
+			}
+		} catch (Exception e) {
+			consolkPanel.msgbox("Fel Sifferformat! va vänlig och mata in 0-6");
+		}
 
 	}
 
 	public void setHour() {
-		analogClock.resetHourAngles();
-		String text = textBoxPanel.getString();
-		int hourNumber = Integer.parseInt(text);
-		TimeType nyTime = new Time(weekAlarmclock.getTime().getDay(), hourNumber, weekAlarmclock.getTime().getMinute(),
-				weekAlarmclock.getTime().getSecond());
-		weekAlarmclock.setTime(nyTime);
-		updateHourClock();
+		try {
+			analogClock.resetHourAngles();
+			String text = textBoxPanel.getString();
+			int hourNumber = Integer.parseInt(text);
+			if (hourNumber <= 23) {
+
+				TimeType nyTime = new Time(weekAlarmclock.getTime().getDay(), hourNumber,
+						weekAlarmclock.getTime().getMinute(), weekAlarmclock.getTime().getSecond());
+				weekAlarmclock.setTime(nyTime);
+				updateHourClock();
+			} else {
+				consolkPanel.msgbox("Fel Sifferformat! va vänlig och mata in 0-23");
+			}
+		} catch (Exception e) {
+			consolkPanel.msgbox("Fel Sifferformat! va vänlig och mata in 0-23");
+		}
 
 	}
 
 	public void setMinute() {
-		analogClock.resetMinuteAngles();
-		String text = textBoxPanel.getString();
-		int minuteNumber = Integer.parseInt(text);
+		try {
+			analogClock.resetMinuteAngles();
+			String text = textBoxPanel.getString();
+			int minuteNumber = Integer.parseInt(text);
+			if (minuteNumber <= 59) {
 
-		TimeType nyTime = new Time(weekAlarmclock.getTime().getDay(), weekAlarmclock.getTime().getHour(), minuteNumber,
-				weekAlarmclock.getTime().getSecond());
-		weekAlarmclock.setTime(nyTime);
-		updateMinuteClock();
+				TimeType nyTime = new Time(weekAlarmclock.getTime().getDay(), weekAlarmclock.getTime().getHour(),
+						minuteNumber, weekAlarmclock.getTime().getSecond());
+				weekAlarmclock.setTime(nyTime);
+				updateMinuteClock();
+			} else {
+				consolkPanel.msgbox("Fel Sifferformat! va vänlig och mata in 0-59");
+			}
+		} catch (Exception e) {
+			consolkPanel.msgbox("Fel Sifferformat! va vänlig och mata in 0-59");
+		}
 	}
 
 	public void setSecond() {
-		analogClock.resetSecondAngles();
-		String text = textBoxPanel.getString();
-		int secondNumber = Integer.parseInt(text);
+		try {
+			analogClock.resetSecondAngles();
+			String text = textBoxPanel.getString();
+			int secondNumber = Integer.parseInt(text);
+			if (secondNumber <= 59) {
 
-		TimeType nyTime = new Time(weekAlarmclock.getTime().getDay(), weekAlarmclock.getTime().getHour(),
-				weekAlarmclock.getTime().getMinute(), secondNumber);
-		weekAlarmclock.setTime(nyTime);
-		updateSecondClock();
+				TimeType nyTime = new Time(weekAlarmclock.getTime().getDay(), weekAlarmclock.getTime().getHour(),
+						weekAlarmclock.getTime().getMinute(), secondNumber);
+				weekAlarmclock.setTime(nyTime);
+				updateSecondClock();
+			} else {
+				consolkPanel.msgbox("Fel Sifferformat! va vänlig och mata in 0-59");
+			}
+		} catch (Exception e) {
+			consolkPanel.msgbox("Fel Sifferformat! va vänlig och mata in 0-59");
+		}
 
 	}
 

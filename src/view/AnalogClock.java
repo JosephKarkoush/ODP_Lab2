@@ -2,8 +2,11 @@ package view;
 
 import controller.*;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -52,7 +55,10 @@ public class AnalogClock extends JPanel {
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-
+		
+		Graphics2D g2 = (Graphics2D) g;
+		g2.setStroke(new BasicStroke(4));
+		
 		g.setColor(Color.white);
 
 		int width = getWidth();
@@ -61,8 +67,8 @@ public class AnalogClock extends JPanel {
 		int xCenter = width / 2;
 		int yCenter = height / 2;
 
-		g.drawLine(0, yCenter, width, yCenter);
-		g.drawLine(xCenter, 0, xCenter, height);
+//		g.drawLine(0, yCenter, width, yCenter);
+//		g.drawLine(xCenter, 0, xCenter, height);
 		g.drawOval(0, 0, width, height);
 
 		double radius = height / 2;
@@ -73,13 +79,13 @@ public class AnalogClock extends JPanel {
 		g.setColor(Color.white);
 		g.drawLine(xCenter, yCenter, (int) xsecondEnd, (int) ysecondEnd);
 
-		double minuteHandLength = radius * 0.7;
+		double minuteHandLength = radius * 0.9;
 		double xMinuteEnd = xCenter + minuteHandLength * Math.cos(minuteAngle);
 		double yMinuteEnd = yCenter - minuteHandLength * Math.sin(minuteAngle);
 		g.setColor(Color.black);
 		g.drawLine(xCenter, yCenter, (int) xMinuteEnd, (int) yMinuteEnd);
 
-		double hourHandLength = radius * 0.7;
+		double hourHandLength = radius * 0.6;
 		double xHourEnd = xCenter + hourHandLength * Math.cos(hourAngle);
 		double yHourEnd = yCenter - hourHandLength * Math.sin(hourAngle);
 		g.setColor(Color.black);

@@ -7,6 +7,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
@@ -31,8 +32,12 @@ public class ConsolPanel extends JPanel implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		setConsoleText("ring ring ring");
+		setConsoleText("🔔Ring Ring Ring🔔");
 
 	}
+	
+	public void msgbox(String errorString){
+		   JOptionPane.showMessageDialog(null, errorString);
+		}
 
 }
