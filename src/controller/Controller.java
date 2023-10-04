@@ -69,11 +69,10 @@ public class Controller {
 			for (AlarmType larm : weekAlarmclock.getAlarms()) {
 
 				if (larm.toString().equals(textLarm)) {
-					System.out.println("jämför");
 					if (!larm.isActive()) {
-						consolkPanel.setConsoleText("false");
+						consolkPanel.setConsoleText("Inactive");
 					} else {
-						consolkPanel.setConsoleText("true");
+						consolkPanel.setConsoleText("Active");
 					}
 				}
 			}
@@ -141,7 +140,7 @@ public class Controller {
 		try {
 			String text = textBoxPanel.getString();
 			int dayNumber = Integer.parseInt(text);
-			if (dayNumber <= 6) {
+			if (dayNumber <= 6 && dayNumber >=0) {
 
 				TimeType nyTime = new Time(dayNumber, weekAlarmclock.getTime().getHour(),
 						weekAlarmclock.getTime().getMinute(), weekAlarmclock.getTime().getSecond());
@@ -160,7 +159,7 @@ public class Controller {
 			analogClock.resetHourAngles();
 			String text = textBoxPanel.getString();
 			int hourNumber = Integer.parseInt(text);
-			if (hourNumber <= 23) {
+			if (hourNumber <= 23 && hourNumber >= 0) {
 
 				TimeType nyTime = new Time(weekAlarmclock.getTime().getDay(), hourNumber,
 						weekAlarmclock.getTime().getMinute(), weekAlarmclock.getTime().getSecond());
